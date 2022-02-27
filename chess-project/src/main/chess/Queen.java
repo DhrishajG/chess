@@ -24,6 +24,9 @@ class Queen extends Piece{
 
 	@Override
 	boolean isLegitMove(int i0, int j0, int i1, int j1) {
-		return true;
+		if(new Bishop(this.colour).isLegitMove(i0, j0, i1, j1) == true || new Rook(this.colour).isLegitMove(i0, j0, i1, j1) == true){
+			return true;
+		}
+		return false;
 	}
 }
