@@ -29,6 +29,6 @@ class King extends Piece{
 		if(new Queen(this.colour).isLegitMove(i0, i1, j0, j1) == true){
 			return true;
 		}
-		return false;
+		return true;
 	}
 }
