@@ -3,6 +3,9 @@ package chess;
 public class CheckInput {
 
 	public static boolean checkCoordinateValidity(String input){
+		if(input.length() != 2){
+			return false;
+		}
 		char c1 = input.charAt(0);
 		char c2 = input.charAt(1);
 		if(c1 == '1' || c1 == '2' || c1 == '3' || c1 == '4' || c1 == '5' || c1 == '6' || c1 == '7' || c1 == '8'){
