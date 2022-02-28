@@ -23,13 +23,18 @@ class King extends Piece{
 
 	@Override
 	boolean isLegitMove(int i0, int j0, int i1, int j1) {
-		if(Math.abs(i0-i1) != 1 || Math.abs(j0-j1) != 1){
+		if(Math.abs(i0-i1) > 1 || Math.abs(j0-j1) > 1){
 			return false;
 		}
-		if(new Queen(this.colour).isLegitMove(i0, i1, j0, j1) == true){
+		if(Board.hasPiece(i1, j1)==false){
 			return true;
 		}
-		return true;
+		else{
+			if(Board.getPiece(i1, j1).getColour() != this.colour){
+				return true;
+			}
+		}
+		return false;
 	}
 
 }
