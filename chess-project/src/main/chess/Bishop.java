@@ -1,10 +1,10 @@
 package chess;
 
-class Bishop extends Piece{
+public class Bishop extends Piece{
 	private PieceColour colour;
 	private String symbol;
 
-	Bishop(PieceColour pc){
+	public Bishop(PieceColour pc){
 		if (pc.equals(PieceColour.WHITE)){
 			this.colour=PieceColour.WHITE;
 			this.symbol="♗";
@@ -23,7 +23,7 @@ class Bishop extends Piece{
 	}
 
 	@Override
-	boolean isLegitMove(int i0, int j0, int i1, int j1) {
+	public boolean isLegitMove(int i0, int j0, int i1, int j1) {
 		int isTrue = -1;
 		if(Math.abs(i1-i0) == Math.abs(j1-j0)){
 			if(Board.hasPiece(i1, j1) == false || Board.getPiece(i1, j1).getColour() != this.colour){

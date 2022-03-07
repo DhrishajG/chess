@@ -1,10 +1,10 @@
 package chess;
 
-class Pawn extends Piece{
+public class Pawn extends Piece{
 	private PieceColour colour;
 	private String symbol;
 
-	Pawn(PieceColour pc){
+	public Pawn(PieceColour pc){
 		if (pc.equals(PieceColour.WHITE)){
 			this.colour=PieceColour.WHITE;
 			this.symbol="♙";
@@ -23,7 +23,7 @@ class Pawn extends Piece{
 	}
 
 	@Override
-	boolean isLegitMove(int i0, int j0, int i1, int j1) {
+	public boolean isLegitMove(int i0, int j0, int i1, int j1) {
 		if(Board.hasPiece(i1, j1) == false){
 			if(j0 - j1 == 0){
 				if(i1-i0 == 1 && this.colour == PieceColour.BLACK){
